@@ -1,132 +1,676 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
+<html class="wide wow-animation" lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,700%7CPlayfair+Display:400,400i,700,900%7CPoppins:300">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+</head>
+<body>
+<div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="{{ asset('assets/images/ie8-panel/warning_bar_0000_us.jpg') }}" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+<div class="preloader">
+    <div class="preloader-body">
+        <div class="cssload-container">
+            <div class="cssload-speeding-wheel"></div>
+        </div>
+        <p>Loading...</p>
+    </div>
+</div>
+<div class="page">
+    <!-- Page Header-->
+    <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+            <nav class="rd-navbar rd-navbar-modern" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                <div class="rd-navbar-main-outer">
+                    <div class="rd-navbar-main">
+                        <!-- RD Navbar Panel-->
+                        <div class="rd-navbar-panel">
+                            <!-- RD Navbar Toggle-->
+                            <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                            <!-- RD Navbar Brand-->
+                            <div class="rd-navbar-brand"><a href="index.html"><img class="brand-logo-light" src="{{ asset('assets/images/logo-light-181x41.png') }}" alt="" width="181" height="41"/></a></div>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
+                        <div class="rd-navbar-main-element">
+                            <div class="rd-navbar-nav-wrap">
+                                <!-- RD Navbar Nav-->
+                                <ul class="rd-navbar-nav">
+                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About</a>
+                                        <!-- RD Navbar Dropdown-->
+                                        <ul class="rd-menu rd-navbar-dropdown">
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="how-we-work.html">How We Work</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="our-team.html">Our team</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="team-member.html">Team Member</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="services.html">Services</a>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Portfolio</a>
+                                        <!-- RD Navbar Dropdown-->
+                                        <ul class="rd-menu rd-navbar-dropdown">
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="gallery-1.html">Gallery 1</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="gallery-2.html">Gallery 2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Pages</a>
+                                        <!-- RD Navbar Megamenu-->
+                                        <ul class="rd-menu rd-navbar-megamenu">
+                                            <li class="rd-megamenu-item">
+                                                <h6 class="rd-megamenu-title">Pages 1</h6>
+                                                <ul class="rd-megamenu-list">
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="typography.html">Typography</a></li>
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="buttons.html">Buttons</a></li>
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="timers-&amp;-counters.html">Timers &amp; Counters</a></li>
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="forms.html">Forms</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="rd-megamenu-item">
+                                                <h6 class="rd-megamenu-title">Pages 2</h6>
+                                                <ul class="rd-megamenu-list">
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="grid-system.html">Grid system</a></li>
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="icon-lists.html">Icon Lists</a></li>
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="privacy-policy.html">Privacy policy</a></li>
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="coming-soon.html">Coming Soon</a></li>
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="search-results.html">Search results</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="rd-megamenu-item">
+                                                <h6 class="rd-megamenu-title">Pages 3</h6>
+                                                <ul class="rd-megamenu-list">
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="single-blog-post.html">Single Blog Post</a></li>
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="news.html">News</a></li>
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="news-2.html">News 2</a></li>
+                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="pricing.html">Pricing</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                                    </li>
+                                </ul><a class="button button-primary" href="#">make an appointment</a>
                             </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
                         </div>
                     </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Swiper-->
+    <section class="section section-lg section-main-bunner">
+        <div class="main-bunner-img" style="background-image: url(&quot;assets/images/bg-bunner-1.jpg&quot;); background-size: cover;"></div>
+        <div class="main-bunner-inner">
+            <div class="container">
+                <div class="row row-30 justify-content-lg-between align-items-lg-center">
+                    <div class="col-lg-2 order-lg-2 text-center text-lg-right">
+                        <div class="block-video-button"><a href="https://www.youtube.com/embed/g8LBPCvkagc" data-lightgallery="item"><span class="icon fa-play icon-md"></span></a></div>
+                    </div>
+                    <div class="col-lg-9 col-xl-8 order-lg-1"><span class="bunner-location">10 Years’ experience</span>
+                        <h1>Wedding Planning</h1><span class="italic-subtitle offset-top-30">Create & plan your perfect<br>wedding with Amour</span>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </section>
+    <!-- Privilege-->
+    <section class="section section-lg text-center">
+        <div class="container">
+            <div class="row row-50">
+                <div class="col-md-6 col-lg-4 wow-outer">
+                    <div class="wow slideInLeft">
+                        <div class="box-icon-classic">
+                            <div class="box-icon-inner decorate-triangle decorate-color-secondary"><span class="icon-xl linearicons-woman"></span></div>
+                            <div class="box-icon-caption">
+                                <h4><a href="#">Qualified Team</a></h4>
+                                <p>Amour employs the best wedding experts in Los Angeles to help you make your wedding unforgettable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow-outer">
+                    <div class="wow slideInDown">
+                        <div class="box-icon-classic">
+                            <div class="box-icon-inner decorate-circle decorate-color-secondary-2"><span class="icon-xl linearicons-hat"></span></div>
+                            <div class="box-icon-caption">
+                                <h4><a href="#">Professional Approach</a></h4>
+                                <p>We will thoroughly plan every element of your wedding ceremony so that you could enjoy your most important day.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow-outer">
+                    <div class="wow slideInRight">
+                        <div class="box-icon-classic">
+                            <div class="box-icon-inner decorate-rectangle decorate-color-primary"><span class="icon-xl linearicons-ice-cream"></span></div>
+                            <div class="box-icon-caption">
+                                <h4><a href="#">Acceptable Prices</a></h4>
+                                <p>Our clients value our affordable pricing policy and great service that allow us to plan the best weddings.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service-->
+    <section class="section section-xl bg-gray-light">
+        <div class="container">
+            <div class="row row-30 justify-content-center text-center">
+                <div class="col-12 wow-outer">
+                    <div class="wow slideInDown">
+                        <h3 class="title-decorate title-decorate-center">What We Offer</h3>
+                    </div>
+                </div>
+                <div class="col-lg-8 wow-outer">
+                    <div class="wow fadeInUp">
+                        <p>Our team provides a variety of wedding-related services, from planning the ceremony to designing and organizing its every element.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-md-6 col-lg-4">
+                    <div class="wow fadeInUp">
+                        <div class="team-classic">
+                            <div class="team-classic-figure"><img src="{{ asset('assets/images/service-1-391x252.jpg') }}" alt="" width="391" height="252"/>
+                                <ul class="team-classic-soc-list">
+                                    <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                                    <li><a class="icon icon-md fa-instagram" href="#"></a></li>
+                                    <li><a class="icon icon-md fa-twitter" href="#"></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-classic-caption">
+                                <h4><a class="team-name" href="team-member.html">Decoration</a></h4>
+                                <p>Unique decoration services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="wow fadeInUp">
+                        <div class="team-classic">
+                            <div class="team-classic-figure"><img src="{{ asset('assets/images/service-2-391x252.jpg') }}" alt="" width="391" height="252"/>
+                                <ul class="team-classic-soc-list">
+                                    <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                                    <li><a class="icon icon-md fa-instagram" href="#"></a></li>
+                                    <li><a class="icon icon-md fa-twitter" href="#"></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-classic-caption">
+                                <h4><a class="team-name" href="team-member.html">Event Planning</a></h4>
+                                <p>Let us plan your wedding</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="wow fadeInUp">
+                        <div class="team-classic">
+                            <div class="team-classic-figure"><img src="{{ asset('assets/images/service-3-391x252.jpg') }}" alt="" width="391" height="252"/>
+                                <ul class="team-classic-soc-list">
+                                    <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                                    <li><a class="icon icon-md fa-instagram" href="#"></a></li>
+                                    <li><a class="icon icon-md fa-twitter" href="#"></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-classic-caption">
+                                <h4><a class="team-name" href="team-member.html">Floral Design</a></h4>
+                                <p>Best bouquets for your event</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="wow fadeInUp">
+                        <div class="team-classic">
+                            <div class="team-classic-figure"><img src="{{ asset('assets/images/service-4-391x252.jpg') }}" alt="" width="391" height="252"/>
+                                <ul class="team-classic-soc-list">
+                                    <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                                    <li><a class="icon icon-md fa-instagram" href="#"></a></li>
+                                    <li><a class="icon icon-md fa-twitter" href="#"></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-classic-caption">
+                                <h4><a class="team-name" href="team-member.html">Stunning Locations</a></h4>
+                                <p>Choose the best location for your wedding</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="wow fadeInUp">
+                        <div class="team-classic">
+                            <div class="team-classic-figure"><img src="{{ asset('assets/images/service-5-391x252.jpg') }}" alt="" width="391" height="252"/>
+                                <ul class="team-classic-soc-list">
+                                    <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                                    <li><a class="icon icon-md fa-instagram" href="#"></a></li>
+                                    <li><a class="icon icon-md fa-twitter" href="#"></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-classic-caption">
+                                <h4><a class="team-name" href="team-member.html">Cake Design</a></h4>
+                                <p>Creative cake ideas for your event</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="wow fadeInUp">
+                        <div class="team-classic">
+                            <div class="team-classic-figure"><img src="{{ asset('assets/images/service-6-391x252.jpg') }}" alt="" width="391" height="252"/>
+                                <ul class="team-classic-soc-list">
+                                    <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                                    <li><a class="icon icon-md fa-instagram" href="#"></a></li>
+                                    <li><a class="icon icon-md fa-twitter" href="#"></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-classic-caption">
+                                <h4><a class="team-name" href="team-member.html">Dance Lessons</a></h4>
+                                <p>Impress every guest with your dance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--	Isotop-->
+    <section class="section section-lg bg-default text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7 wow-outer">
+                    <div class="wow slideInDown">
+                        <h3 class="title-decorate title-decorate-center">Our Portfolio</h3>
+                        <p>Below are some of the best moments captured during the latest weddings we have organized. Feel free to browse our website for more photos!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row isotope-wrap">
+            <!-- Isotope Content-->
+            <div class="col-lg-12">
+                <div class="isotope" data-isotope-layout="masonry" data-isotope-group="gallery" data-lightgallery="group" data-lg-thumbnail="false" data-column-class=".col-lg-3">
+                    <div class="row isotope-condensed">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 2">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="{{ asset('assets/images/gallery-home-1-463x383.jpg') }}" alt="" width="463" height="383"/>
+                                    <div class="gallery-item-classic-caption"><a href="{{ asset('assets/images/gallery-home-1-original.jpg') }}" data-lightgallery="item">zoom</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 1">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="{{ asset('assets/images/gallery-home-2-463x383.jpg') }}" alt="" width="463" height="383"/>
+                                    <div class="gallery-item-classic-caption"><a href="{{ asset('assets/images/gallery-home-2-original.jpg') }}" data-lightgallery="item">zoom</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 1">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="{{ asset('assets/images/gallery-home-3-463x383.jpg') }}" alt="" width="463" height="383"/>
+                                    <div class="gallery-item-classic-caption"><a href="{{ asset('assets/images/gallery-home-3-original.jpg') }}" data-lightgallery="item">zoom</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 1">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="{{ asset('assets/images/gallery-home-4-463x383.jpg') }}" alt="" width="463" height="383"/>
+                                    <div class="gallery-item-classic-caption"><a href="{{ asset('assets/images/gallery-home-4-original.jpg') }}" data-lightgallery="item">zoom</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 1">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="{{ asset('assets/images/gallery-home-5-463x383.jpg') }}" alt="" width="463" height="383"/>
+                                    <div class="gallery-item-classic-caption"><a href="{{ asset('assets/images/gallery-home-5-original.jpg') }}" data-lightgallery="item">zoom</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 2">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="{{ asset('assets/images/gallery-home-6-463x383.jpg') }}" alt="" width="463" height="383"/>
+                                    <div class="gallery-item-classic-caption"><a href="{{ asset('assets/images/gallery-home-6-original.jpg') }}" data-lightgallery="item">zoom</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 2">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="{{ asset('assets/images/gallery-home-7-463x383.jpg') }}" alt="" width="463" height="383"/>
+                                    <div class="gallery-item-classic-caption"><a href="{{ asset('assets/images/gallery-home-7-original.jpg') }}" data-lightgallery="item">zoom</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 2">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="{{ asset('assets/images/gallery-home-8-463x383.jpg') }}" alt="" width="463" height="383"/>
+                                    <div class="gallery-item-classic-caption"><a href="{{ asset('assets/images/gallery-home-8-original.jpg') }}" data-lightgallery="item">zoom</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tabs-->
+    <section class="section-lg bg-gray-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-9 text-center wow-outer">
+                    <div class="wow slideInLeft">
+                        <h3 class="title-decorate offset-top-30">Plan Your Wedding In 4 Steps</h3>
+                        <p>Planning your wedding is not complex at all if you decide to trust us with this matter.<br>This short guide will help you find out more about our services.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tabs-custom tabs-horizontal tabs-modern" id="tabs-1">
+                <div class="row no-gutters row-eq-height">
+                    <div class="col-lg-4 col-xl-3 order-lg-2 wow-outer">
+                        <div class="wow slideInRight">
+                            <ul class="nav nav-tabs nav-tabs-modern">
+                                <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-1-1" data-toggle="tab">step #1</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2" data-toggle="tab">step #2</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3" data-toggle="tab">step #3</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-4" data-toggle="tab">step #4</a></li>
+                            </ul><a class="button button-lg button-primary button-tabs-modern" href="#">Get in touch</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-xl-9 order-lg-1 wow-outer">
+                        <div class="wow slideInLeft eq-tabs">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="tabs-1-1">
+                                    <div class="event-item-classic">
+                                        <div class="event-item-classic-figure">
+                                            <div class="tab-circle"><span class="circle-nubmer">01</span></div>
+                                        </div>
+                                        <div class="event-item-classic-caption">
+                                            <p class="events-time">Discuss your wedding with our planners</p>
+                                            <h4 class="event-item-classic-title"><a href="#">Initial Consultation</a></h4>
+                                            <h5 class="event-item-classic-subtitle"><span>Includes:</span> <a href="#">free consultation and budget definition</a>
+                                            </h5>
+                                            <p class="speaker-text">To make your wedding the best it can be, we recommend to consult with us first. Our team of wedding planners and vendors is always glad to provide you with necessary recommendations and tips on planning the most important event in your life.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show" id="tabs-1-2">
+                                    <div class="event-item-classic">
+                                        <div class="event-item-classic-figure">
+                                            <div class="tab-circle"><span class="circle-nubmer">02</span></div>
+                                        </div>
+                                        <div class="event-item-classic-caption">
+                                            <p class="events-time">Choose the venue of your wedding ceremony</p>
+                                            <h4 class="event-item-classic-title"><a href="#">Selecting the date and location</a></h4>
+                                            <h5 class="event-item-classic-subtitle"><span>Includes:</span> <a href="#">picking a restaurant/hotel or any other venue</a>
+                                            </h5>
+                                            <p class="speaker-text">The second step of wedding planning implies selecting the date of your future wedding ceremony and its location as well as the place where the wedding dinner will happen. We have a various catalog of restaurants and hotels ready to help you.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show" id="tabs-1-3">
+                                    <div class="event-item-classic">
+                                        <div class="event-item-classic-figure">
+                                            <div class="tab-circle"><span class="circle-nubmer">03</span></div>
+                                        </div>
+                                        <div class="event-item-classic-caption">
+                                            <p class="events-time">Select the options of your wedding</p>
+                                            <h4 class="event-item-classic-title"><a href="#">Pick Vendors &amp; Additional Services</a></h4>
+                                            <h5 class="event-item-classic-subtitle"><span>Includes:</span> <a href="#">browsing  vendors &amp; services catalog</a>
+                                            </h5>
+                                            <p class="speaker-text">Choosing vendors is always a tricky and responsible step, whether it means selecting proper flourist services or considering various cake designs. We will help you make the right choice based on your preferences and budget.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show" id="tabs-1-4">
+                                    <div class="event-item-classic">
+                                        <div class="event-item-classic-figure">
+                                            <div class="tab-circle"><span class="circle-nubmer">04</span></div>
+                                        </div>
+                                        <div class="event-item-classic-caption">
+                                            <p class="events-time">Final step to your happiness</p>
+                                            <h4 class="event-item-classic-title"><a href="#">Confirm All Details &amp; Get Married</a></h4>
+                                            <h5 class="event-item-classic-subtitle"><span>Includes:</span> <a href="#">final wedding plan overview</a>
+                                            </h5>
+                                            <p class="speaker-text">Finally, it’s time for getting ready to the best part of the whole event - getting married. But still, before it happens we recommend to check every vendor, service, and additional option you picked to make sure everything will go the way you want it to be.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Owl Carousel-->
+    <section class="section-lg context-light review-carousel">
+        <div class="container">
+            <div class="wow-outer">
+                <div class="wow slideInDown">
+                    <h3 class="title-decorate text-center">What Our Clients Say</h3>
+                </div>
+            </div>
+            <div class="owl-carousel owl-dots-secondary dots-offset-lg" data-dots-custom=".owl-pagination-custom" data-items="1" data-sm-items="1" data-dots-each="2" data-lg-items="1" data-dots="false" data-arrows="true" data-nav="true" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
+                <div class="owl-slide">
+                    <p>The overall experience was excellent! We were told by my friend that wedding planner is the number 1 priority in the entire wedding planning. It’s true! You did everything just like we wanted. Thank you!</p><span>Joanna Smith</span>
+                </div>
+                <div class="owl-slide">
+                    <p>After meeting with your team we knew you were the perfect match for us. I hired Amour for my wedding because I honestly had no idea where to begin and I had to do it in 10 months. Your event planning solutions have helped me a lot.</p><span> James Williams</span>
+                </div>
+                <div class="owl-slide">
+                    <p>Having this wonderful team of wedding experts on board to help plan and coordinate our wedding was the best decision we made. If you’re hesitating at all – don’t. We highly recommend Amour to help you with your wedding planning.</p><span>Kate McMillan</span>
+                </div>
+                <div class="owl-slide">
+                    <p>We are so thankful to your team for their expertise, kindness, and attention to detail that allowed us to truly enjoy our wedding day to the fullest! Your vision helped us design our dream and truly enjoy our wedding.</p><span>Peter Wilson</span>
+                </div>
+            </div>
+            <ul class="owl-pagination-custom">
+                <li data-owl-item="0"><img src="{{ asset('assets/images/user-1-61x60.png') }}" alt="" width="61" height="60"/>
+                </li>
+                <li data-owl-item="1"><img src="{{ asset('assets/images/user-2-61x60.png') }}" alt="" width="61" height="60"/>
+                </li>
+                <li data-owl-item="2"><img src="{{ asset('assets/images/user-4-61x60.png') }}" alt="" width="61" height="60"/>
+                </li>
+                <li data-owl-item="3"><img src="{{ asset('assets/images/user-3-61x60.png') }}" alt="" width="61" height="60"/>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Event Plans-->
+    <section class="section section-lg bg-gray-light text-center">
+        <div class="container">
+            <h3 class="title-decorate">Pricing Plans</h3>
+            <div class="row row-50">
+                <!-- Owl Carousel-->
+                <div class="owl-carousel" data-items="1" data-md-items="1" data-lg-items="3" data-dots="true" data-nav="false" data-stage-padding="15" data-loop="false" data-margin="30" data-mouse-drag="false">
+                    <div class="pricing-corporate">
+                        <h4 class="pricing-corporate-title">Basic</h4>
+                        <div class="pricing-corporate-price"><span class="heading-4">$</span>
+                            <p class="text-accent-2">20</p>
+                        </div>
+                        <ul class="pricing-corporate-list">
+                            <li>Wedding Planning</li>
+                            <li>Photography</li>
+                            <li>Dresses</li>
+                            <li>Shoes</li>
+                            <li>Bouquets</li>
+                        </ul><a class="button button-gradient-hovered button-lg button-block" href="#">Buy Now</a>
+                    </div>
+                    <div class="pricing-corporate box-pricing-selected">
+                        <h4 class="pricing-corporate-title">Standard</h4>
+                        <div class="pricing-corporate-price"><span class="heading-4 text-white">$</span>
+                            <p class="text-accent-2">49</p>
+                        </div>
+                        <ul class="pricing-corporate-list">
+                            <li>Venue Selection</li>
+                            <li>Wedding Preparation</li>
+                            <li>Event Catering</li>
+                            <li>Guest List Management</li>
+                            <li>Videography</li>
+                        </ul><a class="button button-white-outline button-lg button-block" href="#">Buy Now</a>
+                    </div>
+                    <div class="pricing-corporate">
+                        <h4 class="pricing-corporate-title">Premium</h4>
+                        <div class="pricing-corporate-price"><span class="heading-4">$</span>
+                            <p class="text-accent-2">98</p>
+                        </div>
+                        <ul class="pricing-corporate-list">
+                            <li>Wedding Makeup</li>
+                            <li>Musicians & DJs</li>
+                            <li>Wedding Jewelry</li>
+                            <li>Cake Design</li>
+                            <li>Wedding Decor</li>
+                        </ul><a class="button button-gradient-hovered button-lg button-block" href="#">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Blog-->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50">
+                <div class="col-12 text-center">
+                    <h3 class="title-decorate">Latest Posts</h3>
+                </div>
+                <div class="col-md-6 col-lg-4 wow-outer">
+                    <div class="wow fadeInUp">
+                        <div class="post-modern">
+                            <div class="post-modern-figure"><a href="single-blog-post.html"><img src="{{ asset('assets/images/post-modern-1-370x255.jpg') }}" alt="" width="370" height="255"/></a><a class="badge-primary badge" href="#">News</a></div>
+                            <div class="post-modern-caption">
+                                <p class="post-modern-date">April 25, 2018    </p>
+                                <h4 class="post-modern-title"><a href="single-blog-post.html">Why Hire a Professional Wedding Planner: 7 Useful Tips</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow-outer">
+                    <div class="wow slideInDown">
+                        <div class="post-modern post-modern-reverse">
+                            <div class="post-modern-figure"><a href="single-blog-post.html"><img src="{{ asset('assets/images/post-modern-2-370x255.jpg') }}" alt="" width="370" height="255"/></a><a class="badge-secondary badge" href="#">Tips</a></div>
+                            <div class="post-modern-caption">
+                                <p class="post-modern-date">April 25, 2018</p>
+                                <h4 class="post-modern-title"><a href="single-blog-post.html">4 Strategies for Choosing a Wedding Design &amp; Style</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow-outer">
+                    <div class="wow fadeInUp">
+                        <div class="post-modern">
+                            <div class="post-modern-caption">
+                                <p class="post-modern-date">April 25, 2018</p>
+                                <h4 class="post-modern-title"><a href="single-blog-post.html">How to Plan an Outdoor Wedding: 5 Important Tips</a></h4>
+                                <div class="post-modern-text">
+                                    <p>More and more couples are choosing the Great Outdoors as the perfect venue to begin their married journey together. There are some unique things to consider however, if you are planning to celebrate your wedding on the beach, mountain top or under the stars. Your very first consideration...</p>
+                                </div><a class="badge" href="#">Wedding</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--	Story block -->
+    <section class="section section-lg bg-gray-light text-center">
+        <div class="container">
+            <div class="wow-outer">
+                <div class="wow slideInDown">
+                    <h3 class="title-decorate title-decorate-center">Popular Vendors</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 wow-outer">
+                    <div class="wow slideInDown"></div>
+                </div>
+                <div class="col-sm-6 col-lg-3"><a class="box-sponsor wow fadeInUp" href="#"><img src="{{ asset('assets/images/logo-1-270x119.png') }}" alt="" width="270" height="119"/></a></div>
+                <div class="col-sm-6 col-lg-3"><a class="box-sponsor wow fadeInUp" href="#" data-wow-delay="0.3s"><img src="{{ asset('assets/images/logo-2-270x119.png') }}" alt="" width="270" height="119"/></a></div>
+                <div class="col-sm-6 col-lg-3"><a class="box-sponsor wow fadeInUp" href="#" data-wow-delay="0.6s"><img src="{{ asset('assets/images/logo-3-270x119.png') }}" alt="" width="270" height="119"/></a></div>
+                <div class="col-sm-6 col-lg-3"><a class="box-sponsor wow fadeInUp" href="#" data-wow-delay="0.9s"><img src="{{ asset('assets/images/logo-4-270x119.png') }}" alt="" width="270" height="119"/></a></div>
+            </div>
+        </div>
+    </section>
+    <!--Parallax-->
+    <section class="section parallax-container" data-parallax-img="{{ asset('assets/images/parallax-img-3.jpg') }}">
+        <div class="parallax-content section-xxl context-dark text-center bg-dark-filter">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-9 col-lg-8 col-xl-7 wow-outer">
+                        <div class="container wow-outer">
+                            <div class="wow fadeInUp">
+                                <h3 class="title-decorate">Let’s Create the Best Wedding for You</h3>
+                                <p class="parallax-text">Our team of vendors and wedding planners is always glad to create an unforgettable wedding for you and your guests.</p><a class="offset-top-50 button button-lg button-primary" href="#">Get in Touch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page Footer-->
+    <footer class="section footer-classic context-dark">
+        <div class="container">
+            <div class="row row-50">
+                <div class="col-lg-8 order-lg-2 pl-xl-5 wow-outer">
+                    <div class="wow slideInRight">
+                        <div class="row row-50">
+                            <div class="col-12">
+                                <h5 class="footer-title">Subscribe & Stay Updated</h5>
+                                <!-- RD Mailform-->
+                                <form class="rd-mailform text-left rd-form-inline" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ asset('assets/bat/rd-mailform.php') }}">
+                                    <div class="form-wrap">
+                                        <label class="form-label" for="subscribe-email">E-mail</label>
+                                        <input class="form-input" id="subscribe-email" type="email" name="email" data-constraints="@Email @Required">
+                                    </div>
+                                    <div class="form-button group-sm text-center text-lg-left">
+                                        <button class="button button-lg button-white-outline" type="submit">subscribe</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="footer-title">Contacts</h5>
+                                <ul class="list-contact-info">
+                                    <li><span class="icon mdi mdi-map-marker icon-md icon-secondary"></span><span class="list-item-text"><a href="#">51 Francis Street, Darlinghurst NSW 2010, United States</a></span></li>
+                                    <li><span class="icon mdi mdi-phone icon-md icon-secondary"></span><span class="list-item-text"><a href="tel:#">1-800-123-1234</a></span></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="footer-title">Get Social</h5>
+                                <p class="big">Follow us to stay connected and receive instant updates.</p>
+                                <ul class="social-list">
+                                    <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-facebook" href="#"></a></li>
+                                    <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-instagram" href="#"></a></li>
+                                    <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-twitter" href="#"></a></li>
+                                    <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-facebook" href="#"> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 order-lg-1 pr-xl-5 wow-outer">
+                    <div class="wow slideInLeft">
+                        <div class="row row-30">
+                            <div class="col-12"><a href="index.html"><img src="{{ asset('assets/images/logo-light-181x41.png') }}" alt="" width="181" height="41"/></a></div>
+                            <div class="col-12">
+                                <p>Amour provides a focused approach towards the wedding planning segment. With years of experience in the event industry, we stand on a stronger base with the most creative, enthusiastic and committed team.</p>
+                                <div class="footer-divider"></div>
+                                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Amour</span><span>.&nbsp;</span><a href="privacy-policy.html">Privacy Policy</a><span>.</span><span> Design&nbsp;by&nbsp;<a href="https://zemez.io/">Zemez</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<div class="snackbars" id="form-output-global"></div>
+<script src="{{ asset('assets/js/core.min.js') }}"></script>
+<script src="{{ asset('assets/js/script.js') }}"></script>
+</body>
 </html>
