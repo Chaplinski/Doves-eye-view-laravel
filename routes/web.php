@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,22 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts/index');
-});
-
-Route::get('/about', function () {
-    return view('layouts/about');
-});
-
-Route::get('/faq', function () {
-    return view('layouts/faq');
-});
-
-Route::get('/contact', function () {
-    return view('layouts/contact');
-});
-
-Route::get('/service', function () {
-    return view('layouts/service');
-});
+Route::get('/', [SiteController::class, 'home']);
+Route::get('/about', [SiteController::class, 'about']);
+Route::get('/faq', [SiteController::class, 'faq']);
+Route::get('/contact', [SiteController::class, 'contact']);
+Route::get('/service', [SiteController::class, 'service']);
+Route::get('/blog', [SiteController::class, 'blog']);

@@ -1,14 +1,15 @@
-@php
-    $route = request()->path();
-@endphp
-
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 <head>
-    <title>Home</title>
+    <title>{{ $data->title }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="{{ $data->og_title }}">
+    <meta property="og:description" content="{{ $data->og_description }}">
+    <meta property="og:image" content="{{ $data->og_image }}">
+    <meta property="og:url" content="{{ $data->og_url }}">
+    <meta property="description" content="{{ $data->description }}">
     <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,700%7CPlayfair+Display:400,400i,700,900%7CPoppins:300">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
@@ -46,61 +47,19 @@
                             <div class="rd-navbar-nav-wrap">
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                                    <li class="rd-nav-item @if ($data->route === 'home') active @endif"><a class="rd-nav-link" href="/">Home</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About</a>
-                                        <!-- RD Navbar Dropdown-->
-                                        <ul class="rd-menu rd-navbar-dropdown">
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="how-we-work.html">How We Work</a></li>
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="our-team.html">Our team</a></li>
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="team-member.html">Team Member</a></li>
-                                        </ul>
+                                    <li class="rd-nav-item @if ($data->route === 'about') active @endif"><a class="rd-nav-link" href="/about">About Us</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="services.html">Services</a>
+                                    <li class="rd-nav-item @if ($data->route === 'faq') active @endif"><a class="rd-nav-link" href="/faq">FAQ</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Portfolio</a>
-                                        <!-- RD Navbar Dropdown-->
-                                        <ul class="rd-menu rd-navbar-dropdown">
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="gallery-1.html">Gallery 1</a></li>
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="gallery-2.html">Gallery 2</a></li>
-                                        </ul>
+                                    <li class="rd-nav-item @if ($data->route === 'contact') active @endif"><a class="rd-nav-link" href="/contact">Contact</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Pages</a>
-                                        <!-- RD Navbar Megamenu-->
-                                        <ul class="rd-menu rd-navbar-megamenu">
-                                            <li class="rd-megamenu-item">
-                                                <h6 class="rd-megamenu-title">Pages 1</h6>
-                                                <ul class="rd-megamenu-list">
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="typography.html">Typography</a></li>
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="buttons.html">Buttons</a></li>
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="timers-&amp;-counters.html">Timers &amp; Counters</a></li>
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="forms.html">Forms</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="rd-megamenu-item">
-                                                <h6 class="rd-megamenu-title">Pages 2</h6>
-                                                <ul class="rd-megamenu-list">
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="grid-system.html">Grid system</a></li>
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="icon-lists.html">Icon Lists</a></li>
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="privacy-policy.html">Privacy policy</a></li>
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="coming-soon.html">Coming Soon</a></li>
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="search-results.html">Search results</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="rd-megamenu-item">
-                                                <h6 class="rd-megamenu-title">Pages 3</h6>
-                                                <ul class="rd-megamenu-list">
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="single-blog-post.html">Single Blog Post</a></li>
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="news.html">News</a></li>
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="news-2.html">News 2</a></li>
-                                                    <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="pricing.html">Pricing</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                    <li class="rd-nav-item @if ($data->route === 'service') active @endif"><a class="rd-nav-link" href="/service">Our Service</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                                    <li class="rd-nav-item @if ($data->route === 'blog') active @endif"><a class="rd-nav-link" href="/blog">Blog</a>
                                     </li>
-                                </ul><a class="button button-primary" href="#">make an appointment</a>
+                                </ul><a class="button button-primary" href="#">Sample Livestream Page</a>
                             </div>
                         </div>
                     </div>
