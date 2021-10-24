@@ -19,4 +19,6 @@ Route::get('/about', [SiteController::class, 'about']);
 Route::get('/faq', [SiteController::class, 'faq']);
 Route::get('/contact', [SiteController::class, 'contact']);
 Route::get('/service', [SiteController::class, 'service']);
-Route::get('/blog', [SiteController::class, 'blog']);
+
+Route::resource('/blog', PostsController::class);
+
