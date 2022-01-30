@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('site_map', function (Blueprint $table) {
             $table->id();
-            $table->string('route', 16);
+            $table->string('route', 256);
             $table->string('title', 256);
             $table->string('description', 512);
             $table->string('og_title');
-            $table->string('og_description');
+            $table->string('og_description', 512);
             $table->string('og_image');
             $table->string('og_url');
         });

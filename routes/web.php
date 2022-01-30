@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +21,6 @@ Route::get('/faq', [SiteController::class, 'faq']);
 Route::get('/contact', [SiteController::class, 'contact']);
 Route::get('/service', [SiteController::class, 'service']);
 
+//Route::resource('/blog', PostsController::class);
 Route::resource('/blog', PostsController::class);
 
