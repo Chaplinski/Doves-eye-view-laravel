@@ -6,6 +6,8 @@ use Cviebrock\EloquentSluggable\Services\SlugService;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
@@ -22,8 +24,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('blog.blog')->with('data', $this->getAboutSiteMap('blog'));
-//        return view('blog.index')->with('posts', Post::orderBy('updated_at', 'DESC')->get());
+        return view('blog.blog')
+            ->with('data', $this->getAboutSiteMap('blog'))
+            ->with('posts', $this->getAllPosts());
     }
 
     /**
@@ -132,5 +135,9 @@ class PostsController extends Controller
 
     private function getAboutSiteMap(string $route) {
         return DB::table('site_map')->where('route', $route)->first();
+    }
+
+    private function getAllPosts(): LengthAwarePaginator {
+        return Post::query()->paginate(4);
     }
 }
