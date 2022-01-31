@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <section class="section parallax-container breadcrumb-media-content" data-parallax-img="/images/custom/blog/wedding-photography-price-chicago.jpg">
+    <section class="section parallax-container breadcrumb-media-content" data-parallax-img="{{asset('assets/images/custom/blog/wedding-photography-price-chicago.jpg')}}">
         <div class="parallax-content breadcrumbs-custom context-dark">
             <div class="container">
                 <div class="row justify-content-center">
@@ -20,7 +20,7 @@
                         @foreach($posts as $post)
                             <div class="col-md-6">
                                 <div class="post-classic">
-                                    <div class="post-classic-figure"><a href="/blog/{{ $post->slug }}"><img src="images/custom/blog/{{ $post->image_path }}" alt="{{ $post->image_alt_text }}" width="370" height="255"/></a></div>
+                                    <div class="post-classic-figure"><a href="/blog/{{ $post->slug }}"><img src="{{ asset('assets/images/custom/blog/' . $post->image_path) }}" alt="{{ $post->image_alt_text }}" width="370" height="255"/></a></div>
                                     <div class="post-classic-caption">
                                         <h4 class="post-classic-title"><a href="/blog/{{ $post->slug }}">{{ $post->title }}</a></h4>
                                         <ul class="post-classic-meta">

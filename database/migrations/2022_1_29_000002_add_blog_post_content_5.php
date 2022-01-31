@@ -47,7 +47,7 @@ return new class extends Migration
 
     private static function content(): string
     {
-        return '<section class="section parallax-container breadcrumb-media-content" data-parallax-img="../../images/custom/blog/fieldsofgold.jpg">
+        return '<section class="section parallax-container breadcrumb-media-content" data-parallax-img="' . asset('assets/images/custom/blog/fieldsofgold.jpg') . '">
         <div class="parallax-content breadcrumbs-custom context-dark">
           <div class="container">
             <div class="row justify-content-center">
