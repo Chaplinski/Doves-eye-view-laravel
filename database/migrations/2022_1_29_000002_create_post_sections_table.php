@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('post_id')->references('id')->on('posts');
             $table->string('type');
             $table->string('header')->nullable();
-            $table->string('content')->nullable();
+            $table->text('content')->nullable();
             $table->string('image_path')->nullable();
             $table->string('image_alt_text')->nullable();
             $table->string('image_caption')->nullable();
