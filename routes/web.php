@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,5 +23,12 @@ Route::get('/contact', [SiteController::class, 'contact']);
 Route::get('/service', [SiteController::class, 'service']);
 
 //Route::resource('/blog', PostsController::class);
-Route::resource('/blog', PostsController::class);
+
+Route::get('/blog', [SiteController::class, 'blog']);
+Route::get('/blog/futureofweddings', [BlogController::class, 'futureOfWeddings']);
+Route::get('/blog/sendinginvites', [BlogController::class, 'sendingInvites']);
+Route::get('/blog/whotoinvite', [BlogController::class, 'whoToInvite']);
+Route::get('/blog/sevenreasons', [BlogController::class, 'sevenReasons']);
+Route::get('/blog/usandthem', [BlogController::class, 'usAndThem']);
+
 

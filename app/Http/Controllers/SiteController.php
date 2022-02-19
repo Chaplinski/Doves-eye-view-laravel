@@ -37,7 +37,7 @@ class SiteController extends Controller
 
     public function blog()
     {
-        return view('layouts.blog')->with('data', $this->getAboutSiteMap('blog'));
+        return view('blog.blog')->with('data', $this->getAboutSiteMap('blog'));
     }
 
     private function getAboutSiteMap(string $route) {

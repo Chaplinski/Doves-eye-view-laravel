@@ -7,37 +7,32 @@ use App\Models\SiteMap;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
-class SiteController extends Controller
+class BlogController extends Controller
 {
 
-    public function futureofweddings()
+    public function futureOfWeddings()
     {
-        return view('blog.v1.futureofweddings');
+        return view('blog.v1.futureofweddings')->with('data', $this->getAboutSiteMap('blog/futureofweddings'));
     }
 
-    public function sendinginvites()
+    public function sendingInvites()
     {
-        return view('blog.v1.sendinginvites');
+        return view('blog.v1.sendinginvites')->with('data', $this->getAboutSiteMap('blog/sendinginvites'));
     }
 
-    public function faq()
+    public function whoToInvite()
     {
-        return view('layouts.faq')->with('data', $this->getAboutSiteMap('faq'));
+        return view('blog.v1.whotoinvite')->with('data', $this->getAboutSiteMap('blog/whotoinvite'));
     }
 
-    public function contact()
+    public function sevenReasons()
     {
-        return view('layouts.contact')->with('data', $this->getAboutSiteMap('contact'));
+        return view('blog.v1.sevenreasons')->with('data', $this->getAboutSiteMap('blog/sevenreasons'));
     }
 
-    public function service()
+    public function usAndThem()
     {
-        return view('layouts.service')->with('data', $this->getAboutSiteMap('service'));
-    }
-
-    public function blog()
-    {
-        return view('layouts.blog')->with('data', $this->getAboutSiteMap('blog'));
+        return view('blog.v1.usandthem')->with('data', $this->getAboutSiteMap('blog/usandthem'));
     }
 
     private function getAboutSiteMap(string $route) {
