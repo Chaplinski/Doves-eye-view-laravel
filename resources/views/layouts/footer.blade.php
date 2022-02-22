@@ -8,7 +8,7 @@
                         <div class="col-md-6">
                             <h5 class="footer-title">Contact</h5>
                             <ul class="list-contact-info">
-                                <li><span class="icon mdi mdi-email icon-md icon-secondary"></span><span class="list-item-text"><a href="mailto:info@doveseyeviewwedding.com">info@doveseyeviewwedding.com</a></span></li>
+                                <li><span class="icon mdi mdi-email icon-md icon-secondary"></span><span class="list-item-text"><a href="mailto:info@doveseyeviewstreaming.com">info@doveseyeviewstreaming.com</a></span></li>
                             </ul>
                         </div>
                         <div class="col-md-6">

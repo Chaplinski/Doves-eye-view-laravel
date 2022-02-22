@@ -26,7 +26,7 @@
                 <div class="box-icon-classic">
                     <div class="box-icon-inner decorate-rectangle decorate-color-primary"><img src="{{ asset('assets/images/icons/zoom-wedding-livestream-email.png') }}" style="margin-right: auto; margin-left: auto"></div>
                     <div class="box-icon-caption">
-                        <h4><a href="mailto:info@doveseyeviewwedding.com">info@doveseyeviewwedding.com</a></h4>
+                        <h4><a href="mailto:info@doveseyeviewstreaming.com">info@doveseyeviewstreaming.com</a></h4>
                         <p>Questions? Comments? Interested in booking? Send us an email!</p>
                     </div>
                 </div>

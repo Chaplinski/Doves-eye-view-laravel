@@ -20,10 +20,10 @@
                 <h3>What We Do</h3>
                 <div class="text-with-divider">
                     <div class="divider"></div>
-                    <h4 class="font-italic text-opacity-black">We offer top-notch personalized wedding livestreaming services.</h4>
+                    <h4 class="font-italic text-opacity-black">We offer top-notch personalized livestreaming services for weddings, bar/bat mitzvahs, memorials, and more.</h4>
                 </div>
-                <p>Most engaged couples have found that they have to trim down their wedding guest list due to current limitations. Now you can share your wedding day with all of your loved ones, near and far. Dove's Eye View is a husband and wife team that was married during the pandemic, just like you.</p>
-                <p>We'll stream your wedding in 720p HD video resolution in real-time using a 3-camera setup. Our clients have their own custom Dove's Eye View <a href="/sample">webpage</a>, complete with embedded livestream, wedding program, and other options.</p>
+                <p>Most event planners have found that they have to trim down their guest lists for weddings and other events due to current limitations. Now you can share your wedding day, bar/bat mitzvah, or graduation ceremony with all of your loved ones, near and far. Dove's Eye View is a husband and wife team that was married during the pandemic, so we understand the need for a reliable team that produces high-quality livestreams.</p>
+                <p>We'll stream your event in 720p HD video resolution in real-time using a 3-camera setup. Our clients have their own custom Dove's Eye View <a href="/sample">webpage</a>, complete with embedded livestream, wedding/event program, and other options.</p>
             </div>
         </div>
     </div>
@@ -34,7 +34,7 @@
         <div class="row row-50">
             <div class="col-lg-6">
                 <h3>Who We Are</h3>
-                <p>We are a newly married Chicago couple who want to help you bridge the connection between your loved ones and your wedding day. Having planned our own wedding through a pandemic, we know how important a support system can be, even from a distance. Our friends and family were able to watch our Chicagoland wedding ceremony from as far away as Denver, Texas, and London, England.</p><br />
+                <p>We are a newly married Chicago couple who want to help you bridge the connection between your loved ones and your wedding or other special event. Having planned our wedding through a pandemic, we know how important a support system can be, even from a distance. Our friends and family were able to watch our Chicagoland wedding ceremony livestream from as far away as Denver, Texas, and London, England.</p><br />
                 <h4>Carla Chaplinski</h4>
                 <p>Librarian by day and creator by night, you can usually find Carla cuddled up on the couch with a cat and a book, moving on her yoga mat, or cross stitching something fun. At Dove’s Eye View she manages our social media, client services, and her biggest role is making sure that we have up to date details of your wedding party, venue, and ceremony in advance.</p><br />
                 <h4>Scott Chaplinski</h4>

@@ -20,9 +20,9 @@ return new class extends Migration
             'type' => 'Wedding',
             'image_path' => 'beach-wedding-chicago.jpg',
             'image_alt_text' => 'Bride holds pink bouquet wrapped in white bow during Chicago, Illinois wedding livestream.',
-            'facebook_share_link' => 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.doveseyeviewwedding.com%2Fblog%2Ffutureofweddings&src=sdkpreparse',
-            'twitter_link' => 'https://twitter.com/intent/tweet?hashtags=chicagowedding%2Cweddinglivestream%2Cweddingideas&original_referer=https%3A%2F%2Fdoveseyeviewwedding.com%2F&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Eshare%7Ctwgr%5E&related=twitterapi%2Ctwitter&text=Is%20Wedding%20Livestreaming%20Here%20To%20Stay%3F&url=https%3A%2F%2Fdoveseyeviewwedding.com%2Fblog%2Ffutureofweddings&via=twitterdev',
-            'linkedin_link' => 'https://www.linkedin.com/cws/share/?url=https%3A%2F%2Fwww.doveseyeviewwedding.com%2Fblog%2Ffutureofweddings&xdOrigin=https%3A%2F%2Fdoveseyeviewwedding.com&xdChannel=2b7cd411-ca32-478b-9303-78782f3b3a1f&xd_origin_host=https%3A%2F%2Fdoveseyeviewwedding.com',
+            'facebook_share_link' => 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.doveseyeviewstreaming.com%2Fblog%2Ffutureofweddings&src=sdkpreparse',
+            'twitter_link' => 'https://twitter.com/intent/tweet?hashtags=chicagowedding%2Cweddinglivestream%2Cweddingideas&original_referer=https%3A%2F%2Fdoveseyeviewstreaming.com%2F&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Eshare%7Ctwgr%5E&related=twitterapi%2Ctwitter&text=Is%20Wedding%20Livestreaming%20Here%20To%20Stay%3F&url=https%3A%2F%2Fdoveseyeviewstreaming.com%2Fblog%2Ffutureofweddings&via=twitterdev',
+            'linkedin_link' => 'https://www.linkedin.com/cws/share/?url=https%3A%2F%2Fwww.doveseyeviewstreaming.com%2Fblog%2Ffutureofweddings&xdOrigin=https%3A%2F%2Fdoveseyeviewstreaming.com&xdChannel=2b7cd411-ca32-478b-9303-78782f3b3a1f&xd_origin_host=https%3A%2F%2Fdoveseyeviewstreaming.com',
         ]);
 
         self::content($post->id);

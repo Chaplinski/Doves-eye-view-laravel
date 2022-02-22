@@ -65,7 +65,7 @@ return new class extends Migration
               <ul class="blog-post-meta">
                 <li><a class="badge" href="/blog">Info</a></li>
                 <li><span class="icon mdi mdi-clock"></span>December 16, 2020    </li>
-                <li><div class="fb-share-button" data-href="https://doveseyeviewwedding.com/blog/sendinginvites" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdoveseyeviewwedding.com%2Fblog%2Fsharinginvites&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></li>
+                <li><div class="fb-share-button" data-href="https://doveseyeviewstreaming.com/blog/sendinginvites" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdoveseyeviewstreaming.com%2Fblog%2Fsharinginvites&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></li>
               </ul>
               <h3 class="blog-post-title">How To Send Out Livestream Invites: Tips from our Team</h3>
               <div class="blog-post-content">
@@ -224,17 +224,17 @@ return new class extends Migration
               <div class="blog-post-share text-lg-right">
                 <ul class="list-inline">
                   <li class="thin-title">Share post</li>
-                  <li><a class="icon icon-sm fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdoveseyeviewwedding.com%2Fblog%2Fsendinginvites&amp;src=sdkpreparse"></a></li>
+                  <li><a class="icon icon-sm fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdoveseyeviewstreaming.com%2Fblog%2Fsendinginvites&amp;src=sdkpreparse"></a></li>
                   <li><a class="twitter-share-button icon icon-sm fa-twitter"
                          href="https://twitter.com/intent/tweet"
                          data-text="How To Send Out Livestream Invites: Tips from our Team"
-                         data-url="https://doveseyeviewwedding.com/blog/sendinginvites"
+                         data-url="https://doveseyeviewstreaming.com/blog/sendinginvites"
                          data-hashtags="chicagowedding,weddinglivestream,weddingideas"
                          data-via="twitterdev"
                          data-related="twitterapi,twitter">
                       </a></li>
                   <li><script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-                      <script type="IN/Share" data-url="https://www.doveseyeviewwedding.com/blog/sendinginvites"></script></li>
+                      <script type="IN/Share" data-url="https://www.doveseyeviewstreaming.com/blog/sendinginvites"></script></li>
                 </ul>
               </div>
             </div>
