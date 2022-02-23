@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\SiteMap;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class SiteController extends Controller
@@ -30,14 +31,24 @@ class SiteController extends Controller
         return view('layouts.contact')->with('data', $this->getAboutSiteMap('contact'));
     }
 
+    public function thankYou(Request $request)
+    {
+        return view('layouts.thankyou')->with('data', $this->getAboutSiteMap('contact'));
+    }
+
     public function service()
     {
         return view('layouts.service')->with('data', $this->getAboutSiteMap('service'));
     }
 
+    public function sample()
+    {
+        return view('layouts.sample')->with('data', $this->getAboutSiteMap('home'));
+    }
+
     public function blog()
     {
-        return view('layouts.blog')->with('data', $this->getAboutSiteMap('blog'));
+        return view('blog.blog')->with('data', $this->getAboutSiteMap('blog'));
     }
 
     private function getAboutSiteMap(string $route) {

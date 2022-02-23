@@ -19,7 +19,7 @@ return new class extends Migration
                 'description' => 'We always provide our own internet! 3-camera 720p HD video resolution in real-time. Create and plan your perfect wedding livestream with Dove\'s Eye View.',
                 'og_title' => 'Dove\'s Eye View - Wedding Livestream Service',
                 'og_description' => 'Create & plan your perfect wedding livestream with Dove\'s Eye View.',
-                'og_image' => asset('assets/images/custom/wedding-ring-chicago-illinois.jpg'),
+                'og_image' => 'wedding-ring-chicago-illinois.jpg',
                 'og_url' => '/',
             )
         );
@@ -31,7 +31,7 @@ return new class extends Migration
                 'description' => 'Dove\'s Eye View is a husband & wife team that married during the pandemic, just like you. We stream your wedding in 720p HD video resolution in real-time using a 3-camera setup.',
                 'og_title' => 'Dove\'s Eye View - Wedding Livestream Service',
                 'og_description' => 'Dove\'s Eye View is a husband & wife team that married during the pandemic, just like you. We stream your wedding in 720p HD video resolution in real-time using a 3-camera setup.',
-                'og_image' => asset('assets/images/about-us-1-518x430.jpg'),
+                'og_image' => 'about-us-1-518x430.jpg',
                 'og_url' => '/about',
             )
         );
@@ -43,7 +43,7 @@ return new class extends Migration
                 'description' => 'Remote guests do not need Facebook or any other social media account to watch your wedding livestream. Accessing your livestream is as easy as clicking a link.',
                 'og_title' => 'Dove\'s Eye View - Wedding Livestream Service',
                 'og_description' => 'Remote guests do not need Facebook or any other social media account to watch your wedding livestream. Accessing your livestream is as easy as clicking a link.',
-                'og_image' => asset('assets/images/custom/chicago-wedding-rings.jpg'),
+                'og_image' => 'chicago-wedding-rings.jpg',
                 'og_url' => '/faq',
             )
         );
@@ -55,7 +55,7 @@ return new class extends Migration
                 'description' => 'Serving Chicagoland - Including Kankakee, Joliet, Naperville, and more...',
                 'og_title' => 'Dove\'s Eye View - Wedding Livestream Service Contact',
                 'og_description' => 'Serving Chicagoland - Including Kankakee, Joliet, Naperville, and more...',
-                'og_image' => asset('assets/images/custom/bridesmaids-on-wedding-day.jpg'),
+                'og_image' => 'bridesmaids-on-wedding-day.jpg',
                 'og_url' => '/contact',
             )
         );
@@ -67,7 +67,7 @@ return new class extends Migration
                 'description' => 'After your initial consultation we set up your personalized livestream webpage. We can add a digital program of your ceremony, a guest book, Facebook comments, and more. You can see a sample wedding livestream page here.',
                 'og_title' => 'Dove\'s Eye View - Wedding Livestream Service',
                 'og_description' => 'Serving Chicagoland - Including Kankakee, Joliet, Naperville, and more...',
-                'og_image' => asset('assets/images/custom/congratulations-newly-married-couple.jpg'),
+                'og_image' => 'congratulations-newly-married-couple.jpg',
                 'og_url' => '/service',
             )
         );
@@ -79,7 +79,7 @@ return new class extends Migration
                 'description' => 'Create & plan your perfect wedding livestream with Dove\'s Eye View.',
                 'og_title' => 'Dove\'s Eye View - Wedding Livestream Service Blog',
                 'og_description' => 'Create & plan your perfect wedding livestream with Dove\'s Eye View.',
-                'og_image' => asset('assets/images/custom/wedding-ring-chicago-illinois.jpg'),
+                'og_image' => 'wedding-ring-chicago-illinois.jpg',
                 'og_url' => '/blog',
             )
         );

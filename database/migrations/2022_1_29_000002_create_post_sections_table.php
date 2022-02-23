@@ -13,19 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('post_sections', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('slug');
-            $table->string('title');
-            $table->string('display_date')->default('January 1, 2022');
+            $table->integer('post_id')->unsigned()->index();
+            $table->foreign('post_id')->references('id')->on('posts');
             $table->string('type');
-            $table->string('image_path');
+            $table->string('header')->nullable();
+            $table->text('content')->nullable();
+            $table->string('image_path')->nullable();
             $table->string('image_alt_text')->nullable();
-            $table->integer('category_sort_order')->nullable();
-            $table->integer('main_sort_order')->nullable();
-            $table->string('facebook_share_link')->nullable();
-            $table->string('twitter_link')->nullable();
-            $table->string('linkedin_link')->nullable();
+            $table->string('image_caption')->nullable();
+            $table->integer('sort_order');
             $table->timestamps();
         });
     }

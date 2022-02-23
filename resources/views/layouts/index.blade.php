@@ -26,7 +26,7 @@
                             <div class="box-icon-inner decorate-triangle decorate-color-secondary"><img src="{{ asset('assets/images/icons/couple-in-love.png') }}" style="margin-right: auto; margin-left: auto"></div>
                             <div class="box-icon-caption">
                                 <h4>Qualified Team</h4>
-                                <p>We are a couple who was married on October 3rd, 2020, so we understand your situation inside and out.</p>
+                                <p>We are a couple who was married during the pandemic, so we understand the need for a high-quality and reliable livestreaming service.</p>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                             <div class="box-icon-inner decorate-circle decorate-color-secondary-2"><img src="{{ asset('assets/images/icons/zoom-livestream-camera.png') }}" style="margin-right: auto; margin-left: auto"></div>
                             <div class="box-icon-caption">
                                 <h4>Livestreaming in HD</h4>
-                                <p>Your wedding livestream will be shot and broadcast in 720p HD using 3 or more cameras.</p>
+                                <p>Your wedding, bar/bat mitzvah, or memorial livestream will be shot and broadcast in 720p HD using 3 or more cameras.</p>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                             <div class="box-icon-inner decorate-rectangle decorate-color-primary"><img src="{{ asset('assets/images/icons/live-stream-internet-connection.png') }}" style="margin-right: auto; margin-left: auto"></div>
                             <div class="box-icon-caption">
                                 <h4>No WiFi? No Problem.</h4>
-                                <p>We always provide our own 4G LTE WiFi hotspot. We are also capable of connecting to your wedding venue's internet through their WiFi or with a wired connection.</p>
+                                <p>We always provide our own 4G LTE WiFi hotspot. We are also capable of connecting to most wedding/event venue's internet through their WiFi or with a wired connection.</p>
                             </div>
                         </div>
                     </div>
@@ -139,13 +139,11 @@
         <div class="parallax-content section-xxl context-dark text-center bg-dark-filter">
             <div class="container">
                 <div class="row justify-content-md-center">
-                    <div class="col-md-9 col-lg-8 col-xl-7 wow-outer">
                         <div class="container wow-outer">
                             <div class="wow fadeInUp">
-                                <h3 class="title-decorate">Let’s Create the Best Wedding Livestream for You</h3>
-                                <a class="offset-top-50 button button-lg button-primary" href="https://www.doveseyeviewwedding.com/contact">Get in Touch</a>
+                                <h3 class="title-decorate">Weddings, Bar/Bat Mitzvahs, Live Music, Fundraisers</br></br>Let’s Create the Best Livestream for You</h3>
+                                <a class="offset-top-50 button button-lg button-primary" href="https://www.doveseyeviewstreaming.com/contact">Get in Touch</a>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

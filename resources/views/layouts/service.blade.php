@@ -21,24 +21,24 @@
                     <h4 class="pricing-corporate-title">What You Get</h4>
                     <ul class="pricing-corporate-list">
                         <li>Online Consultation</li>
-                        <li>3-Camera Wedding Livestream</li>
+                        <li>3-Camera Wedding/Event Livestream</li>
                         <li>720p Standard HD Video Resolution</li>
                         <!--                            <li>Remote Guest List Management</li>-->
                         <li>Personalized Livestream Webpage</li>
                         <li>Add Guest Book, Facebook Comments, and more</li>
                         <li>Experienced Team of Professionals</li>
-                        <li>Copy of Livestream on USB Thumb Drive</li>
+                        <li>Copy of Livestream to Keep Forever</li>
                         <li>We Provide Our Own Internet</li>
                     </ul><a class="button button-white-outline button-lg button-block" style="margin-top: 30px !important;" href="/contact">Contact Us Now</a>
                 </div>
                 <div class="pricing-corporate box-pricing" style="max-width: unset;">
                     <h4 class="pricing-corporate-title">How It Works</h4>
-                    <p style="text-align: left !important;">After your initial consultation we will set up your personalized wedding livestream webpage.<br><br>
+                    <p style="text-align: left !important;">After your initial consultation we will set up your personalized wedding/event livestream webpage.<br><br>
                         Customize your livestream page with a digital program of your wedding ceremony, a guest book, Facebook comments, and more! You can view a sample wedding livestream page <a href="/sample">here</a>.<br><br>
-                        Match your wedding hashtag to your custom url so it’s easy to share your wedding livestream with your remote guests:<br>
-                        www.doveseyeviewwedding.com/<i>yourlivestreamnamehere</i><br><br>
-                        We will arrive to set up our equipment 60-90 minutes before the start of the ceremony. For best quality audio, we connect directly off the audio board of your venue. However, we do provide our own microphone as a backup option.<br><br>
-                        A recording of your wedding livestream will stay embedded on your personalized wedding livestream page for you and your remote guests for three months. Within two weeks of your wedding ceremony we will send you a copy of your livestream video on a USB thumb drive for you to keep forever.
+                        Match your wedding or event's hashtag to your custom url so it’s easy to share your livestream with your remote guests:<br>
+                        www.doveseyeviewstreaming.com/<i>yourlivestreamnamehere</i><br><br>
+                        We will arrive to set up our equipment 60-90 minutes before the start of the ceremony/event. For best quality audio, we connect directly off the audio board of your venue. However, we do provide our own microphone as a backup option.<br><br>
+                        A recording of your event livestream will stay embedded on your personalized event livestream page for you and your remote guests for two months. Within two weeks of your wedding ceremony or other event we will send you a link where you can download a copy of your livestream to keep forever.
                     </p>
 
                 </div>

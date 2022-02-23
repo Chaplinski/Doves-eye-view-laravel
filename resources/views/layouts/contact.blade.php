@@ -26,7 +26,7 @@
                 <div class="box-icon-classic">
                     <div class="box-icon-inner decorate-rectangle decorate-color-primary"><img src="{{ asset('assets/images/icons/zoom-wedding-livestream-email.png') }}" style="margin-right: auto; margin-left: auto"></div>
                     <div class="box-icon-caption">
-                        <h4><a href="mailto:info@doveseyeviewwedding.com">info@doveseyeviewwedding.com</a></h4>
+                        <h4><a href="mailto:info@doveseyeviewstreaming.com">info@doveseyeviewstreaming.com</a></h4>
                         <p>Questions? Comments? Interested in booking? Send us an email!</p>
                     </div>
                 </div>
@@ -41,7 +41,8 @@
             <div class="col-md-9 col-lg-7">
                 <h3>Get in Touch</h3>
                 <!-- RD Mailform-->
-                <form class="rd-form" data-form-output="form-output-global" data-form-type="contact" method="post" id="contact-form" action="site/pages/submit.php">
+                <form class="rd-form" data-form-output="form-output-global" data-form-type="contact" method="post" id="contact-form" action="{{url('thankyou')}}">
+                    @csrf
                     <div class="form-wrap">
                         <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required" required>
                         <label class="form-label" for="contact-name">Your Name</label>
