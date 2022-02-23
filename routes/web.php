@@ -21,6 +21,9 @@ Route::get('/about', [SiteController::class, 'about']);
 Route::get('/faq', [SiteController::class, 'faq']);
 Route::get('/contact', [SiteController::class, 'contact']);
 Route::get('/service', [SiteController::class, 'service']);
+Route::post('/thankyou', [SiteController::class, 'thankYou']);
+Route::get('/thankyou', [SiteController::class, 'thankYou']);
+Route::get('/sample', [SiteController::class, 'sample']);
 
 //Route::resource('/blog', PostsController::class);
 

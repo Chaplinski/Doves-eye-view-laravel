@@ -41,7 +41,8 @@
             <div class="col-md-9 col-lg-7">
                 <h3>Get in Touch</h3>
                 <!-- RD Mailform-->
-                <form class="rd-form" data-form-output="form-output-global" data-form-type="contact" method="post" id="contact-form" action="site/pages/submit.php">
+                <form class="rd-form" data-form-output="form-output-global" data-form-type="contact" method="post" id="contact-form" action="{{url('thankyou')}}">
+                    @csrf
                     <div class="form-wrap">
                         <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required" required>
                         <label class="form-label" for="contact-name">Your Name</label>
