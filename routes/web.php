@@ -25,6 +25,10 @@ Route::post('/thankyou', [SiteController::class, 'thankYou']);
 Route::get('/thankyou', [SiteController::class, 'thankYou']);
 Route::get('/sample', [SiteController::class, 'sample']);
 
+Route::get('/{url}', function ($url) {
+    return (new SiteController)->client($url);
+});
+
 //Route::resource('/blog', PostsController::class);
 
 Route::get('/blog', [SiteController::class, 'blog']);
