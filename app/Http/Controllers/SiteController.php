@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\SubmitContactUsForm;
 use App\Models\ClientPage;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -30,7 +31,14 @@ class SiteController extends Controller
         return view('layouts.contact')->with('data', $this->getAboutSiteMap('contact'));
     }
 
-    public function thankYou(Request $request)
+    public function thankYouPost(Request $request)
+    {
+        SubmitContactUsForm::make()->handle($request->all());
+
+        return view('layouts.thankyou')->with('data', $this->getAboutSiteMap('contact'));
+    }
+
+    public function thankYouGet(Request $request)
     {
         return view('layouts.thankyou')->with('data', $this->getAboutSiteMap('contact'));
     }
