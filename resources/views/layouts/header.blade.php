@@ -59,7 +59,7 @@
                                     </li>
                                     <li class="rd-nav-item @if ($data->route === 'blog') active @endif"><a class="rd-nav-link" href="/blog">Blog</a>
                                     </li>
-                                </ul><a class="button button-primary" href="#">Sample Livestream Page</a>
+                                </ul><a class="button button-primary" href="/highlights">Sample Livestream Footage</a>
                             </div>
                         </div>
                     </div>

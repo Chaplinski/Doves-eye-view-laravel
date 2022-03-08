@@ -25,14 +25,8 @@ Route::get('/thankyou', [SiteController::class, 'thankYouGet']);
 Route::post('/thankyou', [SiteController::class, 'thankYouPost']);
 
 
-Route::get('/sample', [SiteController::class, 'sample']);
+Route::get('/highlights', [SiteController::class, 'highlights']);
 
-Route::get('/{url}', function ($url) {
-    return (new SiteController)->client($url);
-});
-
-
-//Route::resource('/blog', PostsController::class);
 
 Route::get('/blog', [SiteController::class, 'blog']);
 Route::get('/blog/futureofweddings', [BlogController::class, 'futureOfWeddings']);
@@ -40,5 +34,10 @@ Route::get('/blog/sendinginvites', [BlogController::class, 'sendingInvites']);
 Route::get('/blog/whotoinvite', [BlogController::class, 'whoToInvite']);
 Route::get('/blog/sevenreasons', [BlogController::class, 'sevenReasons']);
 Route::get('/blog/usandthem', [BlogController::class, 'usAndThem']);
+
+// This always needs to be the last function call in this file. Otherwise it breaks routing.
+Route::get('/{url}', function ($url) {
+    return (new SiteController)->client($url);
+});
 
 

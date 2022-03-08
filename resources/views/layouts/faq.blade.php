@@ -1,6 +1,6 @@
 @extends('layouts/app')
 @section('content')
-    <section class="section parallax-container breadcrumb-media-content" data-parallax-img="{{ asset('assets/images/custom/groom-shoes-bible.jpg') }}">
+    <section class="section parallax-container breadcrumb-media-content" data-parallax-img="{{ asset('assets/images/custom/livestream-setup-starved-rock-illinois.jpg') }}">
         <div class="parallax-content breadcrumbs-custom context-dark">
             <div class="container">
                 <div class="row justify-content-center">

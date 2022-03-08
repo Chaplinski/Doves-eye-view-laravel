@@ -49,14 +49,14 @@ class SubmitContactUsForm
             //Server settings
             $mail->isSMTP();
             $mail->isHTML(true);
-            $mail->Host       = 'smtp.gmail.com';
+            $mail->Host       = env('CONTACT_EMAIL_HOST');
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'doveseyeviewstreaming@gmail.com';
-            $mail->Password   = 'lgsksxosvbrlawwq';
-            $mail->Port       = 587;
+            $mail->Username   = env('CONTACT_EMAIL_ADDRESS');
+            $mail->Password   = env('CONTACT_EMAIL_PASSWORD');
+            $mail->Port       = env('CONTACT_EMAIL_PORT', 587);
 
             //Recipients
-            $mail->setFrom('doveseyeviewstreaming@gmail.com', 'Contact Form Submission');
+            $mail->setFrom(env('CONTACT_EMAIL_ADDRESS'), 'Contact Form Submission');
             $mail->addAddress('scott@doveseyeviewstreaming.com');
             $mail->Subject = '[DEV] Info Request - Contact Page';
             $mail->Body    = $body;

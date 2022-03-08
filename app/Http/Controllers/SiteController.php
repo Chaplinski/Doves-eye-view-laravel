@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Actions\SubmitContactUsForm;
 use App\Models\ClientPage;
+use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -48,14 +49,18 @@ class SiteController extends Controller
         return view('layouts.service')->with('data', $this->getAboutSiteMap('service'));
     }
 
-    public function sample()
+    public function highlights()
     {
-        return view('layouts.sample')->with('data', $this->getAboutSiteMap('home'));
+        return view('layouts.highlights')->with('data', $this->getAboutSiteMap('highlights'));
     }
 
     public function blog()
     {
-        return view('blog.blog')->with('data', $this->getAboutSiteMap('blog'));
+        $posts = Post::query()->paginate(4);
+
+        return view('blog.blog')
+            ->with('data', $this->getAboutSiteMap('blog'))
+            ->with('posts', $posts);
     }
 
     /**
