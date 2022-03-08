@@ -41,7 +41,7 @@
             <div class="col-md-9 col-lg-7">
                 <h3>Get in Touch</h3>
                 <!-- RD Mailform-->
-                <form class="rd-form" data-form-output="form-output-global" data-form-type="contact" method="post" id="contact-form" action="{{url('thankyou')}}">
+                <form class="rd-form" data-form-output="form-output-global" data-form-type="contact" method="post" id="contact-form" action="thankyou">
                     @csrf
                     <div class="form-wrap">
                         <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required" required>
@@ -54,6 +54,14 @@
                     <div class="form-wrap">
                         <input class="form-input" id="contact-phone" type="tel" name="phone" data-constraints="@Required" required>
                         <label class="form-label" for="contact-phone">Phone</label>
+                    </div>
+                    <div class="form-wrap">
+                        <input class="form-input" id="contact-location" type="text" name="location" data-constraints="@Required" required>
+                        <label class="form-label" for="contact-location">City/State where event will be held</label>
+                    </div>
+                    <div class="form-wrap">
+                        <input class="form-input" id="contact-date" type="text" name="date" data-constraints="@Required" required>
+                        <label class="form-label" for="contact-date">Event Date</label>
                     </div>
                     <div class="form-wrap">
                         <select class="form-select" id="contact-find-us" name="find-us" data-constraints="@Required" required>

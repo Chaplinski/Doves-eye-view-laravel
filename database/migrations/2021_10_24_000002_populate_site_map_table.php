@@ -15,7 +15,7 @@ return new class extends Migration
         DB::table('site_map')->insert(
             array(
                 'route' => 'home',
-                'title' => 'Dove\'s Eye View - Wedding Livestream Service',
+                'title' => 'Dove\'s Eye View - Event Livestream Service',
                 'description' => 'We always provide our own internet! 3-camera 720p HD video resolution in real-time. Create and plan your perfect wedding livestream with Dove\'s Eye View.',
                 'og_title' => 'Dove\'s Eye View - Wedding Livestream Service',
                 'og_description' => 'Create & plan your perfect wedding livestream with Dove\'s Eye View.',
@@ -27,7 +27,7 @@ return new class extends Migration
         DB::table('site_map')->insert(
             array(
                 'route' => 'about',
-                'title' => 'Dove\'s Eye View - Wedding Livestream Service',
+                'title' => 'Dove\'s Eye View - Event Livestream Service',
                 'description' => 'Dove\'s Eye View is a husband & wife team that married during the pandemic, just like you. We stream your wedding in 720p HD video resolution in real-time using a 3-camera setup.',
                 'og_title' => 'Dove\'s Eye View - Wedding Livestream Service',
                 'og_description' => 'Dove\'s Eye View is a husband & wife team that married during the pandemic, just like you. We stream your wedding in 720p HD video resolution in real-time using a 3-camera setup.',
@@ -39,7 +39,7 @@ return new class extends Migration
         DB::table('site_map')->insert(
             array(
                 'route' => 'faq',
-                'title' => 'Dove\'s Eye View - Wedding Livestream Service FAQ',
+                'title' => 'Dove\'s Eye View - Event Livestream Service FAQ',
                 'description' => 'Remote guests do not need Facebook or any other social media account to watch your wedding livestream. Accessing your livestream is as easy as clicking a link.',
                 'og_title' => 'Dove\'s Eye View - Wedding Livestream Service',
                 'og_description' => 'Remote guests do not need Facebook or any other social media account to watch your wedding livestream. Accessing your livestream is as easy as clicking a link.',
@@ -51,7 +51,7 @@ return new class extends Migration
         DB::table('site_map')->insert(
             array(
                 'route' => 'contact',
-                'title' => 'Dove\'s Eye View - Wedding Livestream Service Contact',
+                'title' => 'Dove\'s Eye View - Event Livestream Service Contact',
                 'description' => 'Serving Chicagoland - Including Kankakee, Joliet, Naperville, and more...',
                 'og_title' => 'Dove\'s Eye View - Wedding Livestream Service Contact',
                 'og_description' => 'Serving Chicagoland - Including Kankakee, Joliet, Naperville, and more...',
@@ -63,7 +63,7 @@ return new class extends Migration
         DB::table('site_map')->insert(
             array(
                 'route' => 'service',
-                'title' => 'Dove\'s Eye View - Wedding Livestream Service',
+                'title' => 'Dove\'s Eye View - Event Livestream Service',
                 'description' => 'After your initial consultation we set up your personalized livestream webpage. We can add a digital program of your ceremony, a guest book, Facebook comments, and more. You can see a sample wedding livestream page here.',
                 'og_title' => 'Dove\'s Eye View - Wedding Livestream Service',
                 'og_description' => 'Serving Chicagoland - Including Kankakee, Joliet, Naperville, and more...',
@@ -75,12 +75,24 @@ return new class extends Migration
         DB::table('site_map')->insert(
             array(
                 'route' => 'blog',
-                'title' => 'Dove\'s Eye View - Wedding Livestream Service Blog',
+                'title' => 'Dove\'s Eye View - Event Livestream Service Blog',
                 'description' => 'Create & plan your perfect wedding livestream with Dove\'s Eye View.',
                 'og_title' => 'Dove\'s Eye View - Wedding Livestream Service Blog',
                 'og_description' => 'Create & plan your perfect wedding livestream with Dove\'s Eye View.',
                 'og_image' => 'wedding-ring-chicago-illinois.jpg',
                 'og_url' => '/blog',
+            )
+        );
+
+        DB::table('site_map')->insert(
+            array(
+                'route' => 'highlights',
+                'title' => 'Dove\'s Eye View - Livestream Samples',
+                'description' => 'Sample footage of events that have been livestreamed by Dove\'s Eye View.',
+                'og_title' => 'Dove\'s Eye View - Livestream Samples',
+                'og_description' => 'Sample footage of events that have been livestreamed by Dove\'s Eye View.',
+                'og_image' => 'wedding-ring-chicago-illinois.jpg',
+                'og_url' => '/highlights',
             )
         );
     }

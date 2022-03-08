@@ -112,7 +112,7 @@
             </div>
             <div class="owl-carousel owl-dots-secondary dots-offset-lg" data-dots-custom=".owl-pagination-custom" data-items="1" data-sm-items="1" data-dots-each="2" data-lg-items="1" data-dots="false" data-arrows="true" data-nav="true" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
                 <div class="owl-slide">
-                    <p>"Dove's Eye View has livestreamed two separate weddings for clients of mine, and I am looking forward to using them again in the future. It was completely stress-free on my end with the way they were able to coordinate everything on their own. The final product was nothing short of fantastic!"</p><span>Peggy Mayer</span>
+                    <p>"Dove's Eye View has livestreamed three separate weddings for clients of mine, and I am looking forward to using them again in the future. It was completely stress-free on my end with the way they were able to coordinate everything on their own. The final product was nothing short of fantastic!"</p><span>Peggy Mayer</span>
                     <p><a href="https://www.spotlightmeetings.com/"><u style="color: blue;">Spotlight Meetings and Events</u></a></p>
                 </div>
                 <div class="owl-slide">

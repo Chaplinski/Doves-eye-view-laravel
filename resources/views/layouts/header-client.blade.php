@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 <head>
-    <title>{{ $data->title }}</title>
+    <title>{{ $data->title_names }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta property="og:title" content="{{ $data->og_title }}">
-    <meta property="og:description" content="{{ $data->og_description }}">
-    <meta property="og:image" content="{{ $data->og_image }}">
-    <meta property="og:url" content="{{ $data->og_url }}">
-    <meta property="description" content="{{ $data->description }}">
+    <meta property="og:title" content="{{ $data->title_names }}">
+    <meta property="og:description" content="Livestream for {{ $data->title_names }}'s Wedding">
+    <meta property="og:image" content="{{ asset('assets/images/custom/client/' . $data->social_image_location) }}">
+    <meta property="og:url" content="www.doveseyeviewstreaming.com/{{ $data->url }}">
+    <meta property="description" content="Livestream for {{ $data->title_names }}'s Wedding">
     <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,700%7CPlayfair+Display:400,400i,700,900%7CPoppins:300">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
