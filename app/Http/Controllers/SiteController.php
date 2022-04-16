@@ -75,7 +75,7 @@ class SiteController extends Controller
             die();
         }
         $dateAndTimes = $this->getDateandTime($data->event_start_time);
-        return view('layouts.sample')
+        return view('layouts.client')
             ->with('data', $data)
             ->with('stream_start', $dateAndTimes['stream_start'])
             ->with('event_start', $dateAndTimes['event_start'])

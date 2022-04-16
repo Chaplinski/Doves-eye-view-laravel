@@ -38,7 +38,7 @@
                         <button class="accordion">Some of my guests are not tech savvy. Will it be easy for them to access my livestream?</button>
                         <div class="panel">
                             <p>One of the main reasons Dove's Eye View is the best platform to stream a wedding is because watching your marriage livestream is as easy as clicking a link and pushing play on a video player. As long as your guests can do those two things then there should be no trouble. Remote guests do not need to download any sort of livestream wedding app and they do not need Facebook or any other social media account to watch your wedding livestream. Dove's Eye View is so easy that even Grandma can do it!
-                                <br /><br />Check out a sample wedding/event livestream page <a href="/sample">here</a>.</p>
+                                <br /><br />Check out samples of our work <a href="/highlights">here</a>.</p>
                         </div>
 
                         <button class="accordion">Do I get to keep a copy of my wedding/event livestream video?</button>

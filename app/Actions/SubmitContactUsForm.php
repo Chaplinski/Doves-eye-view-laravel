@@ -45,6 +45,7 @@ class SubmitContactUsForm
 
         $mail = new PHPMailer(true);
 
+
         try {
             //Server settings
             $mail->isSMTP();

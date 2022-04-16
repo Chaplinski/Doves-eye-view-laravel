@@ -142,7 +142,7 @@
                         <div class="container wow-outer">
                             <div class="wow fadeInUp">
                                 <h3 class="title-decorate">Weddings, Bar/Bat Mitzvahs, Live Music, Fundraisers</br></br>Let’s Create the Best Livestream for You</h3>
-                                <a class="offset-top-50 button button-lg button-primary" href="https://www.doveseyeviewstreaming.com/contact">Get in Touch</a>
+                                <a class="offset-top-50 button button-lg button-primary" href="/contact">Get in Touch</a>
                             </div>
                     </div>
                 </div>
