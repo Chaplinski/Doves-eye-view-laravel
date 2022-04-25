@@ -2,6 +2,8 @@
 
 namespace App\Actions;
 
+use App\Mail\ContactFormSubmitted;
+use App\Models\ContactFormSubmission;
 use Lorisleiva\Actions\Concerns\AsAction;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -12,60 +14,32 @@ class SubmitContactUsForm
 
     public function handle(array $data)
     {
-        $name = $data['name'];
-        $email = $data['email'];
-        $phone = $data['phone'];
-        $location = $data['location'];
-        $date = $data['date'];
-        $how_did_you_find_us = $data['find-us'];
-        $message = $data['message'];
-        $how_we_were_found = '';
+        $contactFormSubmission = new ContactFormSubmission();
+        $contactFormSubmission->name = $data['name'];
+        $contactFormSubmission->email = $data['email'];
+        $contactFormSubmission->phone = $data['phone'];
+        $contactFormSubmission->location = $data['location'];
+        $contactFormSubmission->event_date = $data['date'];
+        $contactFormSubmission->found_us_how = $data['find-us'];
+        $contactFormSubmission->message = $data['message'];
+        $contactFormSubmission->save();
 
-        switch ($how_did_you_find_us) {
-            case $how_did_you_find_us == 'search':
-                $how_we_were_found = 'Search Engine (Google, Bing, etc)';
-                break;
-            case $how_did_you_find_us == 'social':
-                $how_we_were_found = 'Social Media (Facebook, Instagram, etc)';
-                break;
-            case $how_did_you_find_us == 'planner':
-                $how_we_were_found = 'My Wedding Planner Found You';
-                break;
-            case $how_did_you_find_us == 'family':
-                $how_we_were_found = 'Family/Friend Recommended You';
-                break;
-        }
+        $how_did_you_find_us = $contactFormSubmission->found_us_how;
 
-        $body = 'Name: ' . $name . '<br>Email: ' . $email . '<br>Phone: ' . $phone . '<br>Location: '
-            . $location . '<br>Date: ' . $date . '<br>How did you find us: ' . $how_we_were_found
-            . '<br>Message: ' . $message;
+        $how_we_were_found = match ($how_did_you_find_us) {
+            $how_did_you_find_us == 'search' => 'Search Engine (Google, Bing, etc)',
+            $how_did_you_find_us == 'social' => 'Social Media (Facebook, Instagram, etc)',
+            $how_did_you_find_us == 'planner' => 'My Wedding Planner Found You',
+            $how_did_you_find_us == 'family' => 'Family/Friend Recommended You',
+            default => '',
+        };
 
-        // Before this was getting the message ready
-        // Below this is sending the message
+        $body = 'Name: ' . $contactFormSubmission->name . '<br>Email: ' . $contactFormSubmission->email
+            . '<br>Phone: ' . $contactFormSubmission->phone . '<br>Location: ' . $contactFormSubmission->location
+            . '<br>Date: ' . $contactFormSubmission->event_date . '<br>How did you find us: '
+            . $how_we_were_found . '<br>Message: ' . $contactFormSubmission->message;
 
-        $mail = new PHPMailer(true);
-
-
-        try {
-            //Server settings
-            $mail->isSMTP();
-            $mail->isHTML(true);
-            $mail->Host       = env('CONTACT_EMAIL_HOST');
-            $mail->SMTPAuth   = true;
-            $mail->Username   = env('CONTACT_EMAIL_ADDRESS');
-            $mail->Password   = env('CONTACT_EMAIL_PASSWORD');
-            $mail->Port       = env('CONTACT_EMAIL_PORT', 587);
-
-            //Recipients
-            $mail->setFrom(env('CONTACT_EMAIL_ADDRESS'), 'Contact Form Submission');
-            $mail->addAddress('scott@doveseyeviewstreaming.com');
-            $mail->Subject = '[DEV] Info Request - Contact Page';
-            $mail->Body    = $body;
-            $mail->AltBody = $body;
-
-            $mail->send();
-        } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        }
+        //TODO read laravel/mailgun docs and send body to this class to be mailed.
+        new ContactFormSubmitted();
     }
 }
