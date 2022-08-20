@@ -18,7 +18,7 @@
                     <div class="col-lg-12 order-lg-2">
                         <ul class="blog-post-meta">
                             <li><a class="badge" href="/blog">Wedding</a></li>
-                            <li><span class="icon mdi mdi-clock"></span>November 25, 2020    </li>
+                            <li><span class="icon mdi mdi-clock"></span>November 25, 2021    </li>
                             <li><div class="fb-share-button" data-href="https://doveseyeviewstreaming.com/blog/whotoinvite" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdoveseyeviewstreaming.com%2Fblog%2Fwhotoinvite&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></li>
                         </ul>
                         <h3 class="blog-post-title">Who Should You Invite to Your Wedding Livestream?</h3>

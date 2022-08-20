@@ -15,7 +15,7 @@ return new class extends Migration
         Post::query()->create([
             'slug' => 'usandthem',
             'title' => 'The Difference Between Wedding Videographers and Professional Wedding Livestreaming Services',
-            'display_date' => 'September 16, 2020',
+            'display_date' => 'September 16, 2021',
             'type' => 'Info',
             'image_path' => 'bride-with-pink-bouquet.jpg',
             'image_alt_text' => 'Bride holds pink bouquet wrapped in white bow during Chicago, Illinois wedding livestream.',

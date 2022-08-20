@@ -17,7 +17,7 @@
                 <div class="col-lg-12 order-lg-2">
                     <ul class="blog-post-meta">
                         <li><a class="badge" href="/blog">Wedding</a></li>
-                        <li><span class="icon mdi mdi-clock"></span>January 18, 2021    </li>
+                        <li><span class="icon mdi mdi-clock"></span>January 18, 2022    </li>
                         <li><div class="fb-share-button" data-href="https://www.doveseyeviewstreaming.com/blog/futureofweddings" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.doveseyeviewstreaming.com%2Fblog%2Ffutureofweddings&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></li>
                     </ul>
                     <h2 class="blog-post-title">Is Wedding Livestreaming Here To Stay?</h2>

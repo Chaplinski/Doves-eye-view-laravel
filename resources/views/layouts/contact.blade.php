@@ -40,49 +40,7 @@
         <div class="row justify-content-md-center">
             <div class="col-md-9 col-lg-7">
                 <h3>Get in Touch</h3>
-                <!-- RD Mailform-->
-                <form class="rd-form" data-form-output="form-output-global" data-form-type="contact" method="post" id="contact-form" action="thankyou">
-                    @csrf
-                    <div class="form-wrap">
-                        <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required" required>
-                        <label class="form-label" for="contact-name">Your Name</label>
-                    </div>
-                    <div class="form-wrap">
-                        <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required" required>
-                        <label class="form-label" for="contact-email">E-mail</label>
-                    </div>
-                    <div class="form-wrap">
-                        <input class="form-input" id="contact-phone" type="tel" name="phone" data-constraints="@Required" required>
-                        <label class="form-label" for="contact-phone">Phone</label>
-                    </div>
-                    <div class="form-wrap">
-                        <input class="form-input" id="contact-location" type="text" name="location" data-constraints="@Required" required>
-                        <label class="form-label" for="contact-location">City/State where event will be held</label>
-                    </div>
-                    <div class="form-wrap">
-                        <input class="form-input" id="contact-date" type="text" name="date" data-constraints="@Required" required>
-                        <label class="form-label" for="contact-date">Event Date</label>
-                    </div>
-                    <div class="form-wrap">
-                        <select class="form-select" id="contact-find-us" name="find-us" data-constraints="@Required" required>
-                            <option value="not-enabled" disabled selected>How Did You Find Out About Us?</option>
-                            <option value="search">Search Engine (Google, Bing, etc)</option>
-                            <option value="social">Social Media(Facebook, Instagram, etc)</option>
-                            <option value="planner">My Wedding Planner Found You</option>
-                            <option value="family">Friend/Family Recommended You</option>
-                        </select>
-                        <label class="form-label" for="contact-find-us">Phone</label>
-                    </div>
-                    <div class="form-wrap">
-                        <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required" required></textarea>
-                        <label class="form-label" for="contact-message">Message</label>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-sm-7 col-lg-5">
-                            <button class="button button-block button-lg button-gradient g-recaptcha" data-sitekey="6LfU5nUaAAAAALJvaPTMOpa89jX_tN1ZiepJNjX7" data-callback='onSubmit' data-action='submit'type="submit">Send</button>
-                        </div>
-                    </div>
-                </form>
+                <h4>Please contact us at <a href="mailto:info@doveseyeviewstreaming.com">info@doveseyeviewstreaming.com</a></h4>
             </div>
         </div>
     </div>
