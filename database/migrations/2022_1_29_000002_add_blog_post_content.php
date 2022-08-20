@@ -16,7 +16,7 @@ return new class extends Migration
         Post::query()->create([
             'slug' => 'futureofweddings',
             'title' => 'Is Wedding Livestreaming Here To Stay?',
-            'display_date' => 'January 18, 2021',
+            'display_date' => 'January 18, 2022',
             'type' => 'Wedding',
             'image_path' => 'beach-wedding-chicago.jpg',
             'image_alt_text' => 'Bride holds pink bouquet wrapped in white bow during Chicago, Illinois wedding livestream.',

@@ -15,7 +15,7 @@ return new class extends Migration
         Post::query()->create([
             'slug' => 'sevenreasons',
             'title' => '7 Reasons Why Hiring a Professional Wedding Livestreaming Service Is So Worth It',
-            'display_date' => 'October 9, 2020',
+            'display_date' => 'October 9, 2021',
             'type' => 'Info',
             'image_path' => 'african-american-bride-smiling.jpg',
             'image_alt_text' => 'African-American bride in Schaumburg wearing red lipstick and smiling while looking at the camera.',

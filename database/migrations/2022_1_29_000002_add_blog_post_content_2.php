@@ -15,7 +15,7 @@ return new class extends Migration
         Post::query()->create([
             'slug' => 'sendinginvites',
             'title' => 'How To Send Out Livestream Invites: Tips from our Team',
-            'display_date' => 'December 16, 2020',
+            'display_date' => 'December 16, 2021',
             'type' => 'Info',
             'image_path' => 'wedding-invitation-save-the-date.jpg',
             'image_alt_text' => 'Chicago bride holds zoom wedding invitation for her wedding live stream.',

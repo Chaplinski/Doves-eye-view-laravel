@@ -17,7 +17,7 @@
                 <div class="col-lg-6">
                     <ul class="blog-post-meta">
                         <li><a class="badge" href="/blog">Info</a></li>
-                        <li><span class="icon mdi mdi-clock"></span>December 16, 2020    </li>
+                        <li><span class="icon mdi mdi-clock"></span>December 16, 2021    </li>
                         <li><div class="fb-share-button" data-href="https://doveseyeviewstreaming.com/blog/sendinginvites" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdoveseyeviewstreaming.com%2Fblog%2Fsharinginvites&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></li>
                     </ul>
                     <h3 class="blog-post-title">How To Send Out Livestream Invites: Tips from our Team</h3>

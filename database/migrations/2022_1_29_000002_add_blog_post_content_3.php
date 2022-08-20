@@ -15,7 +15,7 @@ return new class extends Migration
         Post::query()->create([
             'slug' => 'whotoinvite',
             'title' => 'Who Should You Invite to Your Wedding Livestream?',
-            'display_date' => 'November 25, 2020',
+            'display_date' => 'November 25, 2021',
             'type' => 'Info',
             'image_path' => 'wedding-live-stream-invitation-ideas.jpg',
             'image_alt_text' => 'A blank wedding livestream invitation in a rustic setting.',

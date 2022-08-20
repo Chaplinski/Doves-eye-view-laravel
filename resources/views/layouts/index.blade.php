@@ -70,7 +70,7 @@
                         <div class="post-modern post-modern-reverse">
                             <div class="post-modern-figure"><a href="/blog/futureofweddings"><img src="{{ asset('assets/images/custom/blog/beach-wedding-chicago.jpg') }}" alt="Wedding live stream services help a Joliet couple tie the knot on the beach." width="370" height="255"/></a><a class="badge-primary badge" href="/blog/usandthem">Wedding</a></div>
                             <div class="post-modern-caption">
-                                <p class="post-modern-date">January 18, 2021</p>
+                                <p class="post-modern-date">January 18, 2022</p>
                                 <h4 class="post-modern-title"><a href="/blog/futureofweddings">Is Wedding Livestreaming Here To Stay?</a></h4>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                         <div class="post-modern">
                             <div class="post-modern-figure"><a href="/blog/sendinginvites"><img src="{{ asset('assets/images/custom/blog/wedding-invitation-save-the-date.jpg') }}" alt="Bride in Chicago, Illinois holding invitation to the best platform to livestream a wedding for her youtube live wedding." width="370" height="255"/></a><a class="badge-secondary badge" href="/blog/sendinginvites">Info</a></div>
                             <div class="post-modern-caption">
-                                <p class="post-modern-date">December 16, 2020</p>
+                                <p class="post-modern-date">December 16, 2021</p>
                                 <h4 class="post-modern-title"><a href="/blog/sendinginvites">How To Send Out Livestream Invites: Tips from our Team</a></h4>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                         <div class="post-modern post-modern-reverse">
                             <div class="post-modern-figure"><a href="/blog/whotoinvite"><img src="{{ asset('assets/images/custom/blog/wedding-live-stream-invitation-ideas.jpg') }}" alt="A blank wedding livestream invitation in a rustic setting." width="370" height="255"/></a><a class="badge-primary badge" href="/blog/usandthem">Wedding</a></div>
                             <div class="post-modern-caption">
-                                <p class="post-modern-date">November 25, 2020</p>
+                                <p class="post-modern-date">November 25, 2021</p>
                                 <h4 class="post-modern-title"><a href="/blog/whotoinvite">Who Should You Invite to Your Wedding Livestream?</a></h4>
                             </div>
                         </div>

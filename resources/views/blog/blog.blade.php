@@ -54,15 +54,15 @@
                         <h5 class="block-aside-title">Top Posts</h5>
                         <div class="post-minimal">
                             <h5 class="post-minimal-title"><a href="/blog/sendinginvites">How To Send Out Livestream Invites: Tips from our Team</a></h5>
-                            <p class="post-minimal-date">December 16, 2020</p>
+                            <p class="post-minimal-date">December 16, 2021</p>
                         </div>
                         <div class="post-minimal">
                             <h5 class="post-minimal-title"><a href="/blog/sevenreasons">7 Reasons Why Hiring a Professional For Your Livestream Is So Worth It</a></h5>
-                            <p class="post-minimal-date">October 9, 2020</p>
+                            <p class="post-minimal-date">October 9, 2021</p>
                         </div>
                         <div class="post-minimal">
                             <h5 class="post-minimal-title"><a href="/blog/whotoinvite">Who Should You Invite to Your Wedding Livestream?</a></h5>
-                            <p class="post-minimal-date">November 25, 2020</p>
+                            <p class="post-minimal-date">November 25, 2021</p>
                         </div>
                     </div>
                 </div>
