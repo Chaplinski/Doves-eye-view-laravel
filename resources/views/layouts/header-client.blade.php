@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta property="og:title" content="{{ $data->title_names }}">
     <meta property="og:description" content="Livestream for {{ $data->title_names }}'s Wedding">
-    <meta property="og:image" content="{{ asset('assets/images/custom/client/' . $data->social_image_location) }}">
+    <meta property="og:image" content="{{ asset('assets/images/custom/client/dove-with-hearts.png') }}">
     <meta property="og:url" content="www.doveseyeviewstreaming.com/{{ $data->url }}">
     <meta property="description" content="Livestream for {{ $data->title_names }}'s Wedding">
     <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">

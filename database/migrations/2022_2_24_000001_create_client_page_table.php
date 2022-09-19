@@ -19,7 +19,6 @@ return new class extends Migration
             $table->boolean('is_wedding');
             $table->string('title_names');
             $table->dateTime('event_start_time');
-            $table->string('social_image_location');
             $table->string('youtube_hash');
             $table->timestamps();
         });

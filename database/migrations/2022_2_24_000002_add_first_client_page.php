@@ -18,7 +18,6 @@ return new class extends Migration
         $cp = new ClientPage();
         $cp->is_wedding = true;
         $cp->event_start_time = Carbon::parse('2022-02-26 16:00:00');
-        $cp->social_image_location = 'rings.jpg';
         $cp->url = 'jim-maria-wedding';
         $cp->youtube_hash = 'hNXikoQ6OgY';
         $cp->title_names = 'Maria and James';
