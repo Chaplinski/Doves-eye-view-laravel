@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property bool $is_wedding
  * @property string $title_names
  * @property Carbon $event_start_time
- * @property string $social_image_location
  * @property string $youtube_hash
  */
 class ClientPage extends Model
@@ -26,7 +25,6 @@ class ClientPage extends Model
         'is_wedding',
         'title_names',
         'event_start_time',
-        'social_image_location',
         'youtube_hash',
     ];
 
